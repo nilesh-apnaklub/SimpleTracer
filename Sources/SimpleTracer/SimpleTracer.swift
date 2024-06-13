@@ -223,7 +223,7 @@ extension SimpleTracer: SimplePingDelegate {
             self.packetCountPerTTL! += 1
             let msg = interval * 1000
             os_log(.debug, "\(String(format: "#\(sendSequence)) \(srcAddr)     %0.3lf ms", msg))")
-            appendResult(step: .router(step: sendSequence, ip: srcAddr, duration: Int(msg)))
+            appendResult(step: .router(step: self.sendSequence, ip: srcAddr, duration: Int(msg)))
         } else {
             self.packetCountPerTTL! += 1
         }
